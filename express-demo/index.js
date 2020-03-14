@@ -1,4 +1,5 @@
 const debug = require("debug")('app:startup')
+const dbDebug = require('debug')('app:db');
 const config = require('config');
 const morgan = require('morgan');
 const helmet = require('helmet');
@@ -12,6 +13,7 @@ var app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
+app.use(express.static('static-content'));
 app.use(helmet());
 app.use('/api/courses', courses);
 app.use('/',home);
@@ -28,6 +30,7 @@ if (app.get('env') === 'development') {
     debug('Morgan enabled.');
     app.use(morgan('tiny'));
 }
+dbDebug('Db Module debugging enabled.');
 
 app.use(log);
 app.use(autheticate);

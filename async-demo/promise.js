@@ -1,8 +1,8 @@
 const p = new Promise((resolve,reject)=>{
 
     setTimeout(()=>{
-        //resolve(1);
-        reject(new Error('error message'));
+        resolve(1);
+        //reject(new Error('error message'));
     },2000);
 
 });
