@@ -4,7 +4,7 @@ getUser(1, (user) => {
     console.log(user);
     getRepositories(user.gitUserName, (repo) => {
         console.log(repo);
-        getCommits(repo[0],(commits)=>{
+        getCommits(repo[0], (commits) => {
             console.log(commits);
         })
     })
@@ -31,7 +31,7 @@ function getRepositories(username, callback) {
         2000);
 }
 
-function getCommits(repo,callback){
+function getCommits(repo, callback) {
     setTimeout(() => {
         console.log("Reading commits for repositorie ....");
         const value = ['commit1', 'commit2', 'commit3'];

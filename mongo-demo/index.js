@@ -55,7 +55,7 @@ async function saveCourse() {
     });
 
     console.log('Inside saving document');
-    const result = await course.save();
+    const result = await course.save();     
     console.log(result);
 }
 

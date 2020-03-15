@@ -19,9 +19,6 @@ function displayCommits(commits){
 }
 
 
-
-
-
 function getUser(id, callback) {
     setTimeout(() => {
         console.log("Reading a user from a database....");
