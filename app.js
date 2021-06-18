@@ -11,6 +11,18 @@ const server = http.createServer((req,res)=>{
         res.end();
     }
 
+
+    if(req.url === '/api/classes'){
+        res.write(JSON.stringify(["Architecting","Security","Analytics"]));
+        res.end();
+    }
+
+
+    if(req.url === '/api/time'){
+        res.write(JSON.stringify(["10.00 AM","1.00 PM","5.00 PM"]));
+        res.end();
+    }
+
 });
 
 //server.on(()=>console.log('message'));
@@ -18,5 +30,5 @@ const server = http.createServer((req,res)=>{
 // console.log(socket);
 // });
 
-server.listen('3000');
-console.log('Listening on port 3000');
+server.listen('80');
+console.log('Listening on port 80');
